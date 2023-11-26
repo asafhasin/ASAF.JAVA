@@ -1,0 +1,50 @@
+שאלה 1
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) 
+  {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter a grade: ");
+    int grade1 = scanner.nextInt();
+    System.out.println("Enter a grade: ");
+    int grade2 = scanner.nextInt();
+    System.out.println("Enter a grade: ");
+    int grade3 = scanner.nextInt();
+
+    double sum = grade1 + grade2 + grade3;
+    double average = sum / 3;
+    System.out.println("The average is " + average);
+  }
+}
+שאלה 2
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) 
+  {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter a number: ");
+    int num1 = scanner.nextInt();
+    System.out.println("Enter a nuber: ");
+    int num2 = scanner.nextInt();
+
+    double a = Math.pow(num1, 2);
+    double b = Math.pow(num2, 2);
+    double c = Math.sqrt(a + b);
+    System.out.println("The hypotenuse is " + c);
+  }
+}
+שאלה 3
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) 
+  {
+    Scanner scanner = new Scanner(System.in);
+    int x = 8;
+
+    int y = (2*x) + 5;
+
+    System.out.println("y=" + y );
+  }
+}
