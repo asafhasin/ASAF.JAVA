@@ -48,3 +48,173 @@ public class Main {
     System.out.println("y=" + y );
   }
 }
+שאלה 4
+import java.util.Scanner;
+
+public class CalculateAverage {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן ציון ראשון:");
+        double grade1 = scanner.nextDouble();
+
+        System.out.println("הזן ציון שני:");
+        double grade2 = scanner.nextDouble();
+
+        System.out.println("הזן ציון שלישי:");
+        double grade3 = scanner.nextDouble();
+
+        double average = (grade1 + grade2 + grade3) / 3;
+
+        System.out.println("הממוצע הוא: " + average);
+
+        scanner.close();
+    }
+}
+שאלה 5
+import java.util.Scanner;
+
+public class FindMinimumNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מספר ראשון:");
+        double number1 = scanner.nextDouble();
+
+        System.out.println("הזן מספר שני:");
+        double number2 = scanner.nextDouble();
+
+        System.out.println("הזן מספר שלישי:");
+        double number3 = scanner.nextDouble();
+
+        double minimumNumber = Math.min(Math.min(number1, number2), number3);
+
+        System.out.println("המספר הקטן ביותר הוא: " + minimumNumber);
+
+        scanner.close();
+    }
+}
+שאלה 6
+import java.util.Scanner;
+
+public class CalculateDistance {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן את הקואורדינטות של הנקודה הראשונה:");
+        System.out.print("X1: ");
+        double x1 = scanner.nextDouble();
+        System.out.print("Y1: ");
+        double y1 = scanner.nextDouble();
+
+        System.out.println("הזן את הקואורדינטות של הנקודה השנייה:");
+        System.out.print("X2: ");
+        double x2 = scanner.nextDouble();
+        System.out.print("Y2: ");
+        double y2 = scanner.nextDouble();
+
+        double distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+        System.out.println("המרחק בין הנקודות הוא: " + distance);
+
+        scanner.close();
+    }
+}
+שאלה 7
+import java.util.Scanner;
+
+public class ArithmeticSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן את האיבר הראשון של הסדרה החשבונית:");
+        double firstTerm = scanner.nextDouble();
+
+        System.out.println("הזן את הפרש הסדרה:");
+        double commonDifference = scanner.nextDouble();
+
+        double fifthTerm = firstTerm + 4 * commonDifference;
+      
+        double tenthTerm = firstTerm + 9 * commonDifference;
+
+        System.out.println("האיבר החמישי של הסדרה הוא: " + fifthTerm);
+        System.out.println("האיבר העשירי של הסדרה הוא: " + tenthTerm);
+
+        scanner.close();
+    }
+}
+שאלה 8
+import java.util.Scanner;
+
+public class IceCreamShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן את מספר הקרטיבים שנרכשו:");
+        int iceCreamsPurchased = scanner.nextInt();
+
+        int singlePrice = 20;
+        int packPrice = 50;
+        int packSize = 54;
+        int maxPacksInPurchase = 2;
+
+        int totalPrice = 0;
+        int packs = iceCreamsPurchased / packSize;
+        int remainingIceCreams = iceCreamsPurchased % packSize;
+
+        totalPrice += packs * packPrice;
+
+        totalPrice += remainingIceCreams * singlePrice;
+
+        System.out.println("המחיר המינימלי הנדרש לתשלום הוא: " + totalPrice + " שקלים");
+
+        scanner.close();
+    }
+}
+שאלה 9
+import java.util.Scanner;
+
+public class StudentInfo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן שם פרטי ומשפחה:");
+        String fullName = scanner.nextLine();
+
+        System.out.println("הזן שם בית הספר:");
+        String schoolName = scanner.nextLine();
+
+        System.out.println("הזן מספר מקצועות הלימוד:");
+        int numOfSubjects = scanner.nextInt();
+
+        System.out.println("My name is " + fullName + " , My school is " + schoolName + " , The number of subjects I study is " + numOfSubjects + " .");
+
+        scanner.close();
+    }
+}
+שאלה 9
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מספר בין שלוש ספרות:");
+        int number = scanner.nextInt();
+
+        // וידוא שהמספר באמת בין שלוש ספרות
+        if (number >= 100 && number <= 999) {
+            // חישוב והדפסת סכום הספרות
+            int digit1 = number % 10;
+            int digit2 = (number / 10) % 10;
+            int digit3 = number / 100;
+            int sumOfDigits = digit1 + digit2 + digit3;
+
+            System.out.println("סכום הספרות של המספר הוא: " + sumOfDigits);
+        } else {
+            System.out.println("המספר אינו בין שלוש ספרות.");
+        }
+
+        scanner.close();
+    }
+}
