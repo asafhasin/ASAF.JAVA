@@ -1,1 +1,124 @@
+שאלה 1
+public class StarTrianglePrinter {
+    public static void main(String[] args) {
+        
+        printTriangle(3); // לדוגמא
+    }
 
+    private static void printTriangle(int height) {
+        for (int i = 1; i <= height; i++) {
+            
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+      
+            System.out.println();
+        }
+    }
+}
+שאלה 2
+public class DivisibleByFivePrinter {
+    public static void main(String[] args) {
+        
+        printIntegersDivisibleByFive(20); // לדוגמא
+    }
+
+  
+    private static void printIntegersDivisibleByFive(int number) {
+        System.out.println("המספרים השלמים המתקבלים בחלוקה ב-5 הם:");
+
+        for (int i = 1; i <= number; i++) {
+            if (i % 5 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+שאלה 3
+public class MultiplicationFunction {
+    public static void main(String[] args) {
+        
+        int result = multiply(5, 7); // לדוגמא
+        System.out.println("המכפלה היא: " + result);
+    }
+
+    
+    private static int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+}
+שאלה 4
+public class SumAndAverageCalculator {
+    public static void main(String[] args) {
+        
+        double average = printSumAndAverage(10, 20, 30); // לדוגמא
+        System.out.println("הממוצע הוא: " + average);
+    }
+
+    private static double printSumAndAverage(int num1, int num2, int num3) {
+        int sum = num1 + num2 + num3;
+        double average = (double) sum / 3;
+
+        System.out.println("סכום המספרים הוא: " + sum);
+        return average;
+    }
+}
+שאלה 5
+public class CirclePropertiesCalculator {
+    public static void main(String[] args) {
+    
+        printCircleProperties(5.0); // לדוגמא
+    }
+
+    private static void printCircleProperties(double radius) {
+    
+        double circumference = 2 * Math.PI * radius;
+        
+        double area = Math.PI * Math.pow(radius, 2);
+
+        System.out.println("היקף המעגל הוא: " + circumference);
+        System.out.println("שטח המעגל הוא: " + area);
+    }
+}
+שאלה 6
+public class RightTriangleHypotenuseCalculator {
+    public static void main(String[] args) {
+    
+        double hypotenuse = calculateHypotenuse(3.0, 4.0); // לדוגמא
+        System.out.println("האורך של היתר הוא: " + hypotenuse);
+    }
+
+    private static double calculateHypotenuse(double sideA, double sideB) {
+  
+        double hypotenuse = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+        return hypotenuse;
+    }
+}
+שאלה 7
+public class ReverseLettersPrinter {
+    public static void main(String[] args) {
+      
+        reverseAndPrintLetters('A', 'B', 'C'); // לדוגמא
+    }
+
+    private static void reverseAndPrintLetters(char letter1, char letter2, char letter3) {
+      
+        System.out.print(letter3);
+        System.out.print(letter2);
+        System.out.println(letter1);
+    }
+}
+שאלה 8
+public class ArithmeticSeriesTermCalculator {
+    public static void main(String[] args) {
+
+        double term = calculateArithmeticSeriesTerm(3, 5, 4); // לדוגמא
+        System.out.println("האיבר הכללי בסדרה הוא: " + term);
+    }
+
+    private static double calculateArithmeticSeriesTerm(double firstTerm, double commonDifference, int termNumber) {
+        
+        double term = firstTerm + (termNumber - 1) * commonDifference;
+        return term;
+    }
+}
