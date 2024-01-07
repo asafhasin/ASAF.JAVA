@@ -1,1 +1,227 @@
+שאלה 1
+public class Main {
 
+    public static void main(String[] args) {
+        int[] arr = {1, 7, 3, 9, 5};
+        int indexToCheck = 2;
+
+        modifyEvenIndexValue(arr, indexToCheck);
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void modifyEvenIndexValue(int[] arr, int index) {
+        if (index >= 0 && index < arr.length) {
+            if (arr[index] % 2 != 0) {
+                arr[index] = findClosestEvenNumber(arr[index]);
+            }
+        } else {
+            System.out.println("Index out of bounds");
+        }
+    }
+
+    public static int findClosestEvenNumber(int num) {
+        return (num % 2 == 0) ? num : num + 1;
+    }
+}
+שאלה 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int[] numbers = new int[5];
+        collectAndPrintAverage(numbers);
+    }
+
+    public static void collectAndPrintAverage(int[] arr) {
+        Scanner scanner = new Scanner(System.in);
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter an integer: ");
+            arr[i] = scanner.nextInt();
+            sum += arr[i];
+        }
+
+        double average = (double) sum / arr.length;
+        System.out.println("The average is: " + average);
+        
+        scanner.close();
+    }
+}
+שאלה 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int[] grades = new int[5];
+        int minGrade = collectAndReturnMinGrade(grades);
+        System.out.println("The minimum grade is: " + minGrade);
+    }
+
+    public static int collectAndReturnMinGrade(int[] arr) {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a grade: ");
+            arr[i] = scanner.nextInt();
+        }
+
+        int minGrade = arr[0];
+        for (int grade : arr) {
+            if (grade < minGrade) {
+                minGrade = grade;
+            }
+        }
+
+        scanner.close();
+        return minGrade;
+    }
+}
+שאלה 4
+public class Main {
+
+    public static void main(String[] args) {
+        int[] numbers = {2, 5, 6, 9, 8, 3, 7, 10, 4, 1};
+        printConsecutiveOddPairs(numbers);
+    }
+
+    public static void printConsecutiveOddPairs(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0) {
+                System.out.println("Pair: (" + arr[i] + ", " + arr[i + 1] + ")");
+            }
+        }
+    }
+}
+שאלה 5
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int inputNumber = 42;
+        boolean isNumberInArray = checkIfNumberInArray(inputNumber);
+        System.out.println("Is " + inputNumber + " in the array? " + isNumberInArray);
+    }
+
+    public static boolean checkIfNumberInArray(int targetNumber) {
+        int[] randomArray = generateRandomArray();
+
+        System.out.print("Random Array: ");
+        for (int num : randomArray) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        for (int num : randomArray) {
+            if (num == targetNumber) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int[] generateRandomArray() {
+        int[] randomArray = new int[10];
+        Random random = new Random();
+
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = random.nextInt(100);
+        }
+
+        return randomArray;
+    }
+}
+שאלה 6
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+        printPairsWithEvenSum(generateRandomArray());
+    }
+
+    public static void printPairsWithEvenSum(int[] arr) {
+        System.out.print("Array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            int sum = arr[i] + arr[i + 1];
+            if (sum % 2 == 0) {
+                System.out.println("Pair: (" + arr[i] + ", " + arr[i + 1] + ")");
+            }
+        }
+    }
+
+    public static int[] generateRandomArray() {
+        int[] randomArray = new int[10];
+        Random random = new Random();
+
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = random.nextInt(100);
+        }
+
+        return randomArray;
+    }
+}
+שאלה 7
+import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int[] randomArray = generateRandomArray();
+        printArrayWithLargestNumberLast(randomArray);
+    }
+
+    public static void printArrayWithLargestNumberLast(int[] arr) {
+        System.out.print("Original Array: ");
+        printArray(arr);
+
+        int maxIndex = findMaxIndex(arr);
+
+        int temp = arr[arr.length - 1];
+        arr[arr.length - 1] = arr[maxIndex];
+        arr[maxIndex] = temp;
+
+        System.out.print("Modified Array: ");
+        printArray(arr);
+    }
+
+    public static int[] generateRandomArray() {
+        int[] randomArray = new int[10];
+        Random random = new Random();
+
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = random.nextInt(100);
+        }
+
+        return randomArray;
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static int findMaxIndex(int[] arr) {
+        int maxIndex = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
+    }
+}
