@@ -1,1 +1,160 @@
+שאלה 1
+import java.util.Scanner;
 
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן שם תלמיד ראשון:");
+        String name1 = scanner.nextLine();
+
+        System.out.println("הזן שם תלמיד שני:");
+        String name2 = scanner.nextLine();
+
+        System.out.println("הזן שם תלמיד שלישי:");
+        String name3 = scanner.nextLine();
+
+        System.out.println("שמות התלמידים בסדר עולה מבחינת סדר מילוני:");
+        if (name1.compareToIgnoreCase(name2) <= 0 && name1.compareToIgnoreCase(name3) <= 0) {
+            System.out.println(name1);
+            if (name2.compareToIgnoreCase(name3) <= 0) {
+                System.out.println(name2);
+                System.out.println(name3);
+            } else {
+                System.out.println(name3);
+                System.out.println(name2);
+            }
+        } else if (name2.compareToIgnoreCase(name1) <= 0 && name2.compareToIgnoreCase(name3) <= 0) {
+            System.out.println(name2);
+            if (name1.compareToIgnoreCase(name3) <= 0) {
+                System.out.println(name1);
+                System.out.println(name3);
+            } else {
+                System.out.println(name3);
+                System.out.println(name1);
+            }
+        } else {
+            System.out.println(name3);
+            if (name1.compareToIgnoreCase(name2) <= 0) {
+                System.out.println(name1);
+                System.out.println(name2);
+            } else {
+                System.out.println(name2);
+                System.out.println(name1);
+            }
+        }
+
+        scanner.close();
+    }
+}
+שאלה 2
+import java.util.Scanner;
+
+public class StringLength {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן משפט הכולל 4 מילים:");
+        String sentence = scanner.nextLine();
+
+        int length = sentence.length();
+        System.out.println("מספר התווים במשפט הוא: " + length);
+
+        scanner.close();
+    }
+}
+שאלה 3
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מחרוזת בת 3 תווים:");
+        String input = scanner.next();
+
+        boolean isPalindrome = checkPalindrome(input);
+
+        System.out.println(isPalindrome ? "True" : "False");
+
+        scanner.close();
+    }
+
+    private static boolean checkPalindrome(String str) {
+        int length = str.length();
+
+        for (int i = 0; i < length / 2; i++) {
+            if (str.charAt(i) != str.charAt(length - 1 - i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+שאלה 4
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מחרוזת בת 3 תווים:");
+        String input = scanner.next();
+
+        String reversedString = reverseString(input);
+        System.out.println("המחרוזת בסדר הפוך היא: " + reversedString);
+
+        scanner.close();
+    }
+
+    private static String reverseString(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i));
+        }
+        return reversed.toString();
+    }
+}
+שאלה 5
+import java.util.Scanner;
+
+public class ReplaceVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מחרוזת בת 4 תווים:");
+        String input = scanner.next();
+
+        String replacedString = replaceVowels(input);
+        System.out.println("המחרוזת המתוקנת היא: " + replacedString);
+
+        scanner.close();
+    }
+
+    private static String replaceVowels(String str) {
+        return str.replaceAll("[aeiouAEIOU]", "*");
+    }
+}
+שאלה 6
+import java.util.Random;
+
+public class RandomNumberAnalysis {
+    public static void main(String[] args) {
+
+        Random random = new Random();
+
+        int randomNumber = random.nextInt(100) + 1;
+
+        System.out.println("המספר הרנדומלי הוא: " + randomNumber);
+
+        String digitType = (randomNumber < 10) ? "חד-ספרתי" : "דו-ספרתי";
+        System.out.println("המספר הוא: " + digitType);
+
+        boolean isDivisibleBy2 = (randomNumber % 2 == 0);
+        System.out.println("האם המספר מתחלק ב-2: " + isDivisibleBy2);
+
+        boolean isDivisibleBy3 = (randomNumber % 3 == 0);
+        System.out.println("האם המספר מתחלק ב-3: " + isDivisibleBy3);
+    }
+}
