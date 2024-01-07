@@ -1,1 +1,260 @@
+שאלה 1
+import java.util.Scanner;
 
+public class StudentGrades {
+    public static void main(String[] args) {
+
+        calculateAndPrintAverage();
+    }
+
+    private static void calculateAndPrintAverage() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן את חמישת הציונים:");
+        double sum = 0;
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("ציון " + i + ": ");
+            double grade = scanner.nextDouble();
+            sum += grade;
+        }
+
+        double average = sum / 5;
+        System.out.println("הממוצע של חמישת הציונים הוא: " + average);
+
+        scanner.close();
+    }
+}
+שאלה 2
+import java.util.Scanner;
+
+public class CountWords {
+    public static void main(String[] args) {
+
+        countAndPrintWordsUntilEnter();
+    }
+
+    private static void countAndPrintWordsUntilEnter() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מילים מהמקלדת (הקלד 'enter' לסיום):");
+
+        int wordCount = 0;
+        String inputWord;
+        do {
+            inputWord = scanner.next();
+            wordCount++;
+        } while (!inputWord.equalsIgnoreCase("enter"));
+
+        System.out.println("מספר המילים שנקלטו: " + (wordCount - 1));
+
+        scanner.close();
+    }
+}
+שאלה 3
+import java.util.Scanner;
+
+public class CreditCardValidation {
+    public static void main(String[] args) {
+
+        validateCreditCardCode("1234");
+    }
+
+    private static void validateCreditCardCode(String correctCode) {
+        Scanner scanner = new Scanner(System.in);
+        int attempts = 3;
+
+        System.out.println("הזן קוד כרטיס אשראי (4 ספרות):");
+
+        while (attempts > 0) {
+            String enteredCode = scanner.next();
+
+            if (enteredCode.equals(correctCode)) {
+                System.out.println("money much How");
+                break;
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    System.out.println("נסיון נותר, הזן שוב:");
+                } else {
+                    System.out.println("Error");
+                }
+            }
+        }
+
+        scanner.close();
+    }
+}
+שאלה 4
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מחרוזת לבדיקה:");
+        String input = scanner.nextLine();
+
+        isPalindrome(input);
+
+        scanner.close();
+    }
+
+    private static void isPalindrome(String str) {
+      
+        String cleanedStr = str.replaceAll("\\s", "").toLowerCase();
+
+        boolean isPalindrome = true;
+        int length = cleanedStr.length();
+        for (int i = 0; i < length / 2; i++) {
+            if (cleanedStr.charAt(i) != cleanedStr.charAt(length - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println("המחרוזת היא פלינדרום.");
+        } else {
+            System.out.println("המחרוזת אינה פלינדרום.");
+        }
+    }
+}
+שאלה 5
+import java.util.Scanner;
+
+public class DivisorsPrinter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("הזן מספר שלם:");
+        int number = scanner.nextInt();
+
+        printDivisors(number);
+
+        scanner.close();
+    }
+
+    private static void printDivisors(int num) {
+
+        System.out.print("המחלקים של " + num + " הם: ");
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                System.out.print(i);
+                if (i != num) {
+                    System.out.print(",");
+                }
+            }
+        }
+    }
+}
+שאלה 6
+public class MultiplicationTable {
+    public static void main(String[] args) {
+      
+        printMultiplicationTable();
+    }
+
+    private static void printMultiplicationTable() {
+        
+        for (int i = 1; i <= 10; i++) {
+          
+            for (int j = 1; j <= 10; j++) {
+
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+שאלה 7
+import java.util.Scanner;
+
+public class GradesAnalyzer {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        printMinAndMaxGrades(scanner);
+
+        scanner.close();
+    }
+
+    private static void printMinAndMaxGrades(Scanner scanner) {
+    
+        System.out.println("הזן 7 ציונים:");
+        int minGrade = Integer.MAX_VALUE;
+        int maxGrade = Integer.MIN_VALUE;
+
+        for (int i = 1; i <= 7; i++) {
+            System.out.print("ציון " + i + ": ");
+            int grade = scanner.nextInt();
+
+            if (grade < minGrade) {
+                minGrade = grade;
+            }
+
+            if (grade > maxGrade) {
+                maxGrade = grade;
+            }
+        }
+
+        System.out.println("הציון המינימלי הוא: " + minGrade);
+        System.out.println("הציון המקסימלי הוא: " + maxGrade);
+    }
+}
+שאלה 8
+public class FibonacciChecker {
+    public static void main(String[] args) {
+        
+        System.out.println(isInFibonacciSequence(13)); // לדוגמא
+    }
+
+    private static boolean isInFibonacciSequence(int number) {
+        int a = 0;
+        int b = 1;
+
+        while (a <= number) {
+            if (a == number) {
+                return true;
+            }
+
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+
+        return false;
+    }
+}
+שאלה 9
+public class MultiplicationWithoutMultiplication {
+    public static void main(String[] args) {
+        
+        multiplyWithoutMultiplication(7, 5); // לדוגמא
+    }
+
+    private static void multiplyWithoutMultiplication(int a, int b) {
+        int result = 0;
+
+        for (int i = 0; i < b; i++) {
+            result += a;
+        }
+
+        System.out.println("המכפלה היא: " + result);
+    }
+}
+שאלה 10
+public class StarTrianglePrinter {
+    public static void main(String[] args) {
+      
+        printTriangle(3); // לדוגמא
+    }
+
+    private static void printTriangle(int height) {
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
